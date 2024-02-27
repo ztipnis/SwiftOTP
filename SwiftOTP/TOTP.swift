@@ -72,10 +72,10 @@ public struct TOTP {
 		return Generator.shared.generateOTP(secret: secret, algorithm: algorithm, counter: UInt64(counterValue), digits: digits)
 	}
 
-	/// Check to see if digits value provided is in the range 6...8 (specified in RFC 4226)
+	/// Check to see if digits value provided is in the range 4...8 (!!! violates !!! RFC 4226)
 	/// - parameter digit: Number of digits for generated string
 	private func validateDigits(digit: Int) -> Bool{
-		let validDigits = 6...8
+		let validDigits = 4...8
 		return validDigits.contains(digit)
 	}
 
